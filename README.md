@@ -7,7 +7,7 @@ A neural net that turns your image into an artistic painting
 
 # Built With
 - Kersa
-- Tensor
+- TensorFlow
 
 # Acknowledgments
 
