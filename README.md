@@ -3,7 +3,7 @@ A neural net that turns your image into an artistic painting
 
 
 ## Work in Progress
-
+![alt text])()
 
 # Built With
 - Kersa
@@ -11,4 +11,4 @@ A neural net that turns your image into an artistic painting
 
 # Acknowledgments
 
-[Somshubra Majumdar]("https://github.com/titu1994")
+[Somshubra Majumdar](https://github.com/titu1994)
