@@ -17,7 +17,7 @@ A neural net that turns your image into an artistic painting
 ![alt tag](https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/iteration_4.png)
 
 ## Usage
-<code> python art_gen.py --b /path /to /the /base /image --s /path /to /the /style /reference --r /path /to /the /output /destination </code>
+<code> python art_gen.py --b /path/to/the/base/image --s /path/to/the/style/reference --r /path/to/the/output/destination </code>
 ## Built With
 - Kersa
 - TensorFlow
