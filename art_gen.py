@@ -16,9 +16,9 @@ K.set_image_dim_ordering('th')
 ####cl argumentst#####
 
 parser = argparse.ArgumentParser(description='Neural style transfer with Keras.')
-parser.add_argument('--base_image_path', metavar='base', type=str, help='Path to the image to transform.')
-parser.add_argument('--style_reference_image_path', metavar='ref', type=str, help='Path to the style reference image.')
-parser.add_argument('--result_prefix', metavar='res_prefix', type=str, help='Prefix for the saved results.')
+parser.add_argument('--b', metavar='base', type=str, help='Path to the image to transform.')
+parser.add_argument('--s', metavar='ref', type=str, help='Path to the style reference image.')
+parser.add_argument('--r', metavar='res_prefix', type=str, help='Prefix for the saved results.')
 
 parser.add_argument("--image_size", dest="img_size", default=512, type=int, help='Output Image size')
 parser.add_argument("--content_weight", dest="content_weight", default=0.025, type=float, help="Weight of content") # 0.025
@@ -143,7 +143,7 @@ def combine_loss_and_gradient(loss, gradient):
 def prepare_image():
     assert args.init_image in ["content", "noise"] , "init_image must be one of ['original', 'noise']"
     if "content" in args.init_image:
-        x = preprocess_image(base_image_path, True)
+        x = preprocess_image(b, True)
     else:
         x = np.random.uniform(0, 255, (1, 3, img_width, img_height))
     num_iter = args.num_iter
@@ -175,9 +175,9 @@ evaluator = Evaluator()
 
 #variables
 args = parser.parse_args()
-base_image_path = args.base_image_path
-style_reference_image_path = args.style_reference_image_path
-result_prefix = args.result_prefix
+b = args.b
+s = args.s
+r = args.r
 
 weights_path = r"vgg16_weights.h5" #weight file
 
@@ -197,8 +197,8 @@ img_WIDTH = img_HEIGHT = 0
 aspect_ratio = 0
 
 #tensor
-base_image = K.variable(preprocess_image(base_image_path, True))
-style_reference_image = K.variable(preprocess_image(style_reference_image_path))
+base_image = K.variable(preprocess_image(b, True))
+style_reference_image = K.variable(preprocess_image(s))
 
 combination_image = K.placeholder((1, 3, img_width, img_height))
 
