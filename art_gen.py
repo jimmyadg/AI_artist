@@ -291,7 +291,7 @@ for i in range(num_iter):
         img = imresize(img, (img_WIDTH, img_HEIGHT), interp=args.rescale_method)
 
     #Step 5 - Save the generated image
-    fname = result_prefix + '_at_iteration_%d.png' % (i+1)
+    fname = 'iteration_%d.png' % (i+1)
     imsave(fname, img)
     end_time = time.time()
     print('Image saved as', fname)
