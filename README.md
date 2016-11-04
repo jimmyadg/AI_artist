@@ -1,4 +1,4 @@
-# Artists Super Mixer
+# Artistic Super Mixer
 A neural net that turns your image into an artistic painting
 
 
