@@ -10,11 +10,10 @@ import h5py
 from keras.models import Sequential
 from keras.layers.convolutional import Convolution2D, ZeroPadding2D, AveragePooling2D
 from keras import backend as K
+K.set_image_dim_ordering('th')
 
 
-#### There are 3 Parts #####
-
-## Part 1 -- Command line arguments
+####cl argumentst#####
 
 parser = argparse.ArgumentParser(description='Neural style transfer with Keras.')
 parser.add_argument('--base_image_path', metavar='base', type=str, help='Path to the image to transform.')
@@ -34,11 +33,11 @@ parser.add_argument("--content_layer", dest="content_layer", default="conv5_2", 
 parser.add_argument("--init_image", dest="init_image", default="content", type=str, help="Initial image used to generate the final image. Options are 'content' or 'noise")
 
 
-## Part 2 -- Helper Methods
+####function wrapper by llSourcell####
 def strToBool(v):
     return v.lower() in ("true", "yes", "t", "1")
 
-# util function to open, resize and format pictures into appropriate tensors
+# adjusting piture to fit tensor
 def preprocess_image(image_path, load_dims=False):
     global img_WIDTH, img_HEIGHT, aspect_ratio
 
@@ -53,7 +52,7 @@ def preprocess_image(image_path, load_dims=False):
     img = np.expand_dims(img, axis=0)
     return img
 
-# util function to convert a tensor into a valid image
+#converting tensor into a valid image
 def deprocess_image(x):
     x = x.transpose((1, 2, 0))
     x = np.clip(x, 0, 255).astype('uint8')
@@ -73,7 +72,7 @@ def load_weights(weight_path, model):
     print('Model loaded.')
 
 
-# the gram matrix of an image tensor (feature-wise outer product)
+#image tensor gram matrix
 def gram_matrix(x):
     assert K.ndim(x) == 3
     features = K.batch_flatten(x)
@@ -90,11 +89,7 @@ def eval_loss_and_grads(x):
         grad_values = np.array(outs[1:]).flatten().astype('float64')
     return loss_value, grad_values
 
-# the "style loss" is designed to maintain
-# the style of the reference image in the generated image.
-# It is based on the gram matrices (which capture style) of
-# feature maps from the style reference image
-# and from the generated image
+#feature mapping of the reference picture
 def style_loss(style, combination):
     assert K.ndim(style) == 3
     assert K.ndim(combination) == 3
@@ -119,7 +114,7 @@ def total_variation_loss(x):
     return K.sum(K.pow(a + b, 1.25))
 
 def get_total_loss(outputs_dict):
-    # combine these loss functions into a single scalar
+    # combine loss funcs
     loss = K.variable(0.)
     layer_features = outputs_dict[args.content_layer] # 'conv5_2' or 'conv4_2'
     base_image_features = layer_features[0, :, :, :]
@@ -154,12 +149,7 @@ def prepare_image():
     num_iter = args.num_iter
     return x, num_iter
 
-# this Evaluator class makes it possible
-# to compute loss and gradients in one pass
-# while retrieving them via two separate functions,
-# "loss" and "grads". This is done because scipy.optimize
-# requires separate functions for loss and gradients,
-# but computing them separately would be inefficient.
+# scipy.optimize loss and grads
 class Evaluator(object):
     def __init__(self):
         self.loss_value = None
@@ -182,38 +172,34 @@ class Evaluator(object):
 evaluator = Evaluator()
 
 
-#Part 3 - The main code
 
-
-#Define base image, style image, and result image paths
+#variables
 args = parser.parse_args()
 base_image_path = args.base_image_path
 style_reference_image_path = args.style_reference_image_path
 result_prefix = args.result_prefix
 
-#Get the weights file
-weights_path = r"vgg16_weights.h5"
+weights_path = r"vgg16_weights.h5" #weight file
 
-#Init bools to decide whether or not to resize
+#resizing determining boolean
 rescale_image = strToBool(args.rescale_image)
 maintain_aspect_ratio = strToBool(args.maintain_aspect_ratio)
 
-# Init variables for style and content weights.
+# style and content weight
 total_variation_weight = args.tv_weight
 style_weight = args.style_weight * args.style_scale
 content_weight = args.content_weight
 
-# Init dimensions of the generated picture.
+# demension of the generate image
 img_width = img_height = args.img_size
 assert img_height == img_width, 'Due to the use of the Gram matrix, width and height must match.'
 img_WIDTH = img_HEIGHT = 0
 aspect_ratio = 0
 
-# get tensor representations of our images
+#tensor
 base_image = K.variable(preprocess_image(base_image_path, True))
 style_reference_image = K.variable(preprocess_image(style_reference_image_path))
 
-# this will contain our generated image
 combination_image = K.placeholder((1, 3, img_width, img_height))
 
 # combine the 3 images into a single Keras tensor
@@ -221,7 +207,7 @@ input_tensor = K.concatenate([base_image,
                               style_reference_image,
                               combination_image], axis=0)
 
-# build the VGG16 network with our 3 images as input
+# using the three inputs to build a VGG network
 first_layer = ZeroPadding2D((1, 1))
 first_layer.set_input(input_tensor, shape=(3, 3, img_width, img_height))
 
@@ -262,6 +248,7 @@ model.add(ZeroPadding2D((1, 1)))
 model.add(Convolution2D(512, 3, 3, activation='relu'))
 model.add(AveragePooling2D((2, 2), strides=(2, 2)))
 
+#####Code by Somshubra Majumdar#####
 # load the weights of the VGG16 networks
 load_weights(weights_path, model)
 
