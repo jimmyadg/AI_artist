@@ -16,7 +16,8 @@ A neural net that turns your image into an artistic painting
 #### Iteration 4
 ![alt tag](https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/iteration_4.png)
 
-
+</br>
+</br>
 ### Turning My Cat into a Egon Schiele Painting
 <img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/test2_ref.jpg" width = "366">
 <img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/test2.gif" width = "366">
