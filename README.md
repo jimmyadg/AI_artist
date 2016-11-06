@@ -16,7 +16,7 @@ A neural net that turns your image into an artistic painting
 #### Iteration 4
 ![alt tag](https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/iteration_4.png)
 
-<img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/test2_ref.jpg">
+<img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/test2_ref.jpg" width = "244">
 <img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/test2.gif">
 
 ## Usage
