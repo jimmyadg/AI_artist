@@ -19,7 +19,7 @@ A neural net that turns your image into an artistic painting
 
 ### Turning My Cat into a Egon Schiele Painting
 <img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/test2_ref.jpg" width = "244">
-<img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/test2.gif">
+<img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/test2.gif" width = "488">
 
 ## Usage
 <code> python art_gen.py --b /path/to/the/base/image --s /path/to/the/style/reference --r /path/to/the/output/destination </code>
