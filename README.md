@@ -16,6 +16,9 @@ A neural net that turns your image into an artistic painting
 #### Iteration 4
 ![alt tag](https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/iteration_4.png)
 
+<img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/test2_ref.jpg">
+<img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/test2.gif">
+
 ## Usage
 <code> python art_gen.py --b /path/to/the/base/image --s /path/to/the/style/reference --r /path/to/the/output/destination </code>
 ## Built With
