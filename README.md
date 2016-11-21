@@ -1,4 +1,4 @@
-# Artistic Super Mixer
+# Artistic Super Mixer (Project Finding Inner Peace WIP)
 A neural net that turns your image into an artistic painting
 
 
