@@ -13,16 +13,54 @@
     </form>
   </div>
   <div class="info">
-    <h2>Style</h2>
-    <p>
-      jeofjoqreigjorienogbneronroeb
-    </p>
-    <h2>Qualities</h2>
-    <p>gwjlrjeljglerjglerjlr</p>
-    <h2>Interpretation</h2>
-    <p>fjgljerlgjerljglerjlrejgl</p>
+    <div class="header">
+      <span><h2>Style</h2></span>
+    </div>
+    <div class="content">
+      <p>
+        Abstraction
+      </p>
+    </div>
+    <div class="header">
+      <span><h2>Qualities</h2></span>
+    </div>
+    <div class="content">
+      <p>
+        The artist uses simple lines, geometric shapes, and solid colors to create an abstracted space. The space is more ambiguous. The shapes overlap, giving an impression of collage, and they are interlocked onto the flat surface of the painting. Yet the composition also suggests a spatial dimension, giving the impression of both interior and exterior spaces.
+      </p>
+    </div>
+    <div class="header">
+      <span><h2>Interpretation</h2></span>
+    </div>
+    <div class="content">
+      <p>The angled line on the left of the painting may be interpreted as the edge of the studio wall, while the white lines against the dark background along the top edge of the painting resemble building tops against the night sky. Here the artist suggests both a domestic setting and at the same time, a larger view of the city. These interplays of inside-outside, surface and depth are complimented by the lively contrasts of color: light and dark, vivid and pale, all working together to create a variety of rhythms reminiscent of jazz music.</p>
+    </div>
+    <div class="header">
+      <span><h2>Artisit References</h2></span>
+    </div>
+    <div class="content">
+      
+    </div>
+
   </div>
   <div id="canvas"></div>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  $(".header").click(function () {
+
+    $header = $(this);
+    //getting the next element
+    $content = $header.next();
+    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+    $content.slideToggle(500, function () {
+      //execute this after slideToggle is done
+      //change text of header based on visibility of content div
+    });
+  });
+  </script>
   <script type="text/javascript" src="js/main.js"></script>
   <script src="js/three.js"></script>
 
