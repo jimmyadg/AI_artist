@@ -79,7 +79,7 @@ canvas{
 ul{
   margin: 0;
   padding: 2px;
-  display: inline;
+  display: inline-block;
 }
 li{
   list-style-type: none;
