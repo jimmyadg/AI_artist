@@ -11,8 +11,8 @@ var mouseY = 0;
 var fov=0;
 var plane;
 var mouseX = 0, mouseY = 0;
-var windowHalfX = window.innerWidth / 2;
-var windowHalfY = window.innerHeight / 2;
+var windowHalfX = window.innerWidth /2;
+var windowHalfY = window.innerHeight /2;
 //var loader = new THREE.ImageLoader();
 
 function init(){
@@ -28,7 +28,7 @@ function init(){
 
 
   loadImg();
-  camera.position.z = 50;
+  camera.position.z = 20;
   camera.lookAt(new THREE.Vector3(0,0,0));
   scene.add(camera);
 }
@@ -54,8 +54,8 @@ function loadImg(){
     //set background color
     bgColor = new THREE.Color(255,255,255);
     renderer.setClearColor(bgColor,1);
-    camera.position.x += ( mouseX - camera.position.x ) * 0.005;
-    camera.position.y += ( - mouseY - camera.position.y ) * 0.005;
+    camera.position.x += ( mouseX/8 - camera.position.x *30) * 0.05;
+    camera.position.y += ( - mouseY/8 - camera.position.y*30 ) * 0.05;
     camera.lookAt( scene.position );
 
   }
