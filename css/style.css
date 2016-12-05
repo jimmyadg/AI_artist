@@ -47,13 +47,14 @@ canvas{
   z-index: -1;
 }
 
-.info{
+#info{
   position:absolute;
   display: block;
   z-index: 999;
   right:20%;
   top:30%;
   width:225px;
+  visibility: hidden;
 }
 
 .info h2{

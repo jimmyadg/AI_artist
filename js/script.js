@@ -25,7 +25,6 @@ function init(){
   console.log('demo painting: Stuart Davis - Egg Beater No. 4, 1928');
   container.appendChild( renderer.domElement );
   loadImg();
-
   camera.position.z = 30;
   camera.lookAt(new THREE.Vector3(0,0,0));
   scene.add(camera);
