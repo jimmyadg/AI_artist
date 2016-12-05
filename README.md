@@ -7,7 +7,7 @@ A neural net that turns your image into an artistic painting
 ![alt tag](https://github.com/jimmyadg/AI_artist/blob/master/img.jpg)
 #### Original Picture
 
-<img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/original.png">
+<img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/original.png" style="text-alignment:center;">
 
 <img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/iteration_1.png" width="366">
 <img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/iteration_2.png" width="366">
