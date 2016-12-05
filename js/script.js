@@ -26,14 +26,14 @@ function init(){
   container.appendChild( renderer.domElement );
   loadImg();
 
-  camera.position.z = 20;
+  camera.position.z = 25;
   camera.lookAt(new THREE.Vector3(0,0,0));
   scene.add(camera);
 }
 
 function loadImg(){
   var loader = new THREE.TextureLoader();
-  loader.load('./img/test.jpg',function(texture){
+  loader.load('./img/test.JPG',function(texture){
     var geometry = new THREE.PlaneGeometry( 30, 20, 32 );
     var material = new THREE.MeshBasicMaterial({
       map:texture,
