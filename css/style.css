@@ -58,6 +58,7 @@ canvas{
 }
 
 .info h2{
+  cursor: pointer;
   font-size: 28px;
 }
 
