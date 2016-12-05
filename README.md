@@ -8,7 +8,8 @@ A neural net that turns your image into an artistic painting
 #### Original Picture
 <p align="center">
 <img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/original.png">
-
+</p>
+<p align="center">
 <img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/iteration_1.png" width="366">
 <img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/iteration_2.png" width="366">
 <img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/iteration_3.png" width="366">
