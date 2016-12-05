@@ -44,6 +44,8 @@ function loadImg(){
   });
 }
 
+
+
 function animatedRender(){
   requestAnimationFrame(animatedRender);
   renderer.render(scene,camera);
@@ -53,7 +55,9 @@ function animatedRender(){
   renderer.setClearColor(bgColor,1);
   camera.position.x += ( mouseX/8 - camera.position.x *30) * 0.05;
   camera.position.y += ( - mouseY/8 - camera.position.y*30 ) * 0.05;
-  camera.lookAt( scene.position );
+  scene.position.x = 10;
+  scene.position.z = -10;
+  camera.lookAt(scene.position);
 
 }
 

@@ -42,3 +42,17 @@ canvas{
   background-color: white;
   color: black;
 }
+
+#canvas{
+  z-index: -1;
+}
+
+
+.info{
+  position:absolute;
+  display: block;
+  z-index: 999;
+  right:10%;
+  top:15%;
+
+}
