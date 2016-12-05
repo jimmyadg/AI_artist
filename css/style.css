@@ -71,3 +71,23 @@ canvas{
   display: none;
   padding : 2px;
 }
+#tumb{
+  margin-right: 2%;
+  width: 20%;
+}
+
+ul{
+  margin: 0;
+  padding: 2px;
+  display: inline;
+}
+li{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  color:grey;
+}
