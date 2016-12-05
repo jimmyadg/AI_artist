@@ -35,7 +35,7 @@ function init(){
 
 function loadImg(){
   var loader = new THREE.TextureLoader();
-  loader.load('./img/test.png',function(texture){
+  loader.load('./img/test.jpg',function(texture){
     var geometry = new THREE.PlaneGeometry( 30, 20, 32 );
     var material = new THREE.MeshBasicMaterial({
       map:texture,
