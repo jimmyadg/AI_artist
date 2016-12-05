@@ -1,6 +1,3 @@
-
-
-
 var viewAngle = 75;
 var aspectRatio = window.innerWidth / window.innerHeight;
 var near = 0.1;
@@ -16,7 +13,8 @@ var plane;
 //var loader = new THREE.ImageLoader();
 
 function init(){
-  document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
+  document.addEventListener('mousemove',onMouseMove,false);
+  //document.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
   window.addEventListener('resize',onWindowResize,false);
 
   container = document.getElementById( 'canvas' );
@@ -58,6 +56,10 @@ function loadImg(){
 
   }
 
+  function onMouseMove(event){
+    mouseX = event.clientX - windowHalfX;
+    mouseY = event.clientY - windowHalfY;
+  }
 
   function onDocumentMouseWheel(event)
   {
