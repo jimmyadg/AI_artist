@@ -26,7 +26,7 @@ function init(){
   container.appendChild( renderer.domElement );
   loadImg();
 
-  camera.position.z = 25;
+  camera.position.z = 30;
   camera.lookAt(new THREE.Vector3(0,0,0));
   scene.add(camera);
 }
