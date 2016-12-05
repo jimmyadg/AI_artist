@@ -22,7 +22,7 @@ function init(){
   container = document.getElementById( 'canvas' );
   document.body.appendChild( container );
   renderer.setSize(window.innerWidth, window.innerHeight);
-  console.log('jyao');
+  console.log('demo painting: Stuart Davis - Egg Beater No. 4, 1928');
   container.appendChild( renderer.domElement );
   loadImg();
 
