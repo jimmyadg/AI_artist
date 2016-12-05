@@ -51,17 +51,17 @@ canvas{
   position:absolute;
   display: block;
   z-index: 999;
-  right:10%;
-  top:20%;
+  right:20%;
+  top:30%;
   width:225px;
 }
 
 .info h2{
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .info p {
-  font-size: 12px;
+  font-size: 16px;
 }
 .header{
   padding: 1px;
