@@ -54,8 +54,9 @@ function loadImg(){
     //set background color
     bgColor = new THREE.Color(255,255,255);
     renderer.setClearColor(bgColor,1);
-    camera.position.x += (mouseX - camera.position.x) * 0.01;
-    camera.position.y += (-mouseY - camera.position.y) * 0.01;
+    camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+    camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+    camera.lookAt( scene.position );
 
   }
 
