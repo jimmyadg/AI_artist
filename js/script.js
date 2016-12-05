@@ -10,6 +10,9 @@ var mouseX = 0;
 var mouseY = 0;
 var fov=0;
 var plane;
+var mouseX = 0, mouseY = 0;
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
 //var loader = new THREE.ImageLoader();
 
 function init(){
