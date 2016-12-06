@@ -4,14 +4,14 @@ A neural net that turns your image into an artistic painting
 
 <h2>Demo Pictures</h2>
 ### Turning a Nike Air Mag into a Monet Painting
-### Original Pictures</h2>
 <br>
+### Original Pictures</h2>
 <p align="center">
 <img src="https://github.com/jimmyadg/AI_artist/blob/master/img.jpg" width="366">
 <img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/original.png"width="366">
 </p>
-### Iterations 1 - 4
 <br>
+### Iterations 1 - 4
 <p align="center">
 
 <img src="https://github.com/jimmyadg/Art_Gen/blob/master/demo_pictures/iteration_1.png" width="366">
